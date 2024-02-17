@@ -10,4 +10,5 @@ sample = ['q', 'u', 'a', 'c', 'k']
 
 #for i in range(1, len(A)):
 #    if A[i] == 'q':
-# 
+#       print(e)
+#    else:
