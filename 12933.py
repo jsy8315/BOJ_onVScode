@@ -12,3 +12,4 @@ sample = ['q', 'u', 'a', 'c', 'k']
 #    if A[i] == 'q':
 #       print(e)
 #    else:
+#       print(k)
