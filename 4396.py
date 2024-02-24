@@ -10,11 +10,7 @@ for i in range(n):
 for i in range(n):
     opened[i] = list(map(str, sys.stdin.readline().strip()))
 
-print(mine)
-print(opened)
-
 output = [[0] * n for _ in range(n)]
-print(output)
 
 if n != 1:
     for i in range(n):
@@ -156,11 +152,10 @@ else:
         else:
             output[0][0] = 1
 
-print(output)
-
 for i in range(n):
     finalOutput = []
     for j in range(n):
         finalOutput.append(str(output[i][j]))
+    result = ''.join(finalOutput)
+    print(result)
 
-    print(finalOutput, end='')
