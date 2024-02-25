@@ -1,8 +1,8 @@
 import sys
 
 n = int(sys.stdin.readline())
-mine = [[0] for _ in range(n)]
-opened = [[0] for _ in range(n)]
+mine = [['.' for _ in range(n)] for _ in range(n)]
+opened = [['.' for _ in range(n)] for _ in range(n)]
 
 for i in range(n):
     mine[i] = list(map(str, sys.stdin.readline().strip()))
@@ -28,7 +28,7 @@ if n != 1:
                         cnt += 1
                     if mine[1][1] == "*":
                         cnt += 1
-                    output[0][0] = cnt
+                    output[i][j] = cnt
                 elif i == 0 and j == n - 1 :
                     cnt = 0
                     if mine[0][n - 1] == "*":
@@ -39,7 +39,7 @@ if n != 1:
                         cnt += 1
                     if mine[1][n - 2] == "*":
                         cnt += 1
-                    output[0][0] = cnt
+                    output[i][j] = cnt
                 elif i == n - 1 and j == 0:
                     cnt = 0
                     if mine[n - 1][0] == "*":
@@ -50,7 +50,7 @@ if n != 1:
                         cnt += 1
                     if mine[n - 2][1] == "*":
                         cnt += 1
-                    output[0][0] = cnt
+                    output[i][j] = cnt
                 elif i == n - 1 and j == n - 1:
                     cnt = 0
                     if mine[n - 1][n - 1] == "*":
@@ -61,7 +61,7 @@ if n != 1:
                         cnt += 1
                     if mine[n - 1][n - 1] == "*":
                         cnt += 1
-                    output[0][0] = cnt
+                    output[i][j] = cnt
                 elif i == 0 and ((j != 0) or (j != n - 1)):
                     cnt = 0
                     if mine[0][j] == "*":
@@ -76,7 +76,7 @@ if n != 1:
                         cnt += 1
                     if mine[1][j + 1] == "*":
                         cnt += 1
-                    output[0][j] = cnt
+                    output[i][j] = cnt
                 elif i == n - 1 and ((j != 0) or (j != n - 1)):
                     cnt = 0
                     if mine[n - 1][j] == "*":
@@ -91,7 +91,7 @@ if n != 1:
                         cnt += 1
                     if mine[n - 2][j + 1] == "*":
                         cnt += 1
-                    output[n - 1][j] = cnt
+                    output[i][j] = cnt
                 elif j == 0 and ((i != 0) or (i != n - 1)):
                     cnt = 0
                     if mine[i][0] == "*":
@@ -106,7 +106,7 @@ if n != 1:
                         cnt += 1
                     if mine[i + 1][1] == "*":
                         cnt += 1
-                    output[i][0] = cnt
+                    output[i][j] = cnt
                 elif j == n - 1 and ((i != 0) or (i != n - 1)):
                     cnt = 0
                     if mine[i][n - 1] == "*":
@@ -121,7 +121,7 @@ if n != 1:
                         cnt += 1
                     if mine[i + 1][n - 2] == "*":
                         cnt += 1
-                    output[i][n - 1] = cnt
+                    output[i][j] = cnt
                 else:
                     cnt = 0
                     if mine[i - 1][j - 1] == "*":
@@ -148,7 +148,7 @@ else:
         output[0][0] = "."
     else:
         if mine[0][0] == "*":
-            output[0][0] = 1
+            output[0][0] = "*"
         else:
             output[0][0] = 1
 
