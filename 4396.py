@@ -1,8 +1,8 @@
 import sys
 
 n = int(sys.stdin.readline())
-mine = [['.' for _ in range(n)] for _ in range(n)]
-opened = [['.' for _ in range(n)] for _ in range(n)]
+mine = [[0] for _ in range(n)]
+opened = [[0] for _ in range(n)]
 
 for i in range(n):
     mine[i] = list(map(str, sys.stdin.readline().strip()))
