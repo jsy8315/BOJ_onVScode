@@ -2,18 +2,25 @@
 
 import sys
 
-N = int(sys.stdin.readline())
+n = int(sys.stdin.readline())
+stars = [[' ' for _ in range(4 * n - 3)] for _ in range(4 * n - 3)]
 
-if N == 1:
-    print("*")
+def fill_star(n, x, y):
+    if n == 1:
+        stars[y][x] = '*'
+        return
+    
+    length = 4 * n - 3
 
-else:
-    for i in range(1, 8 * N - 7):
-        if i == 2 * N - 1   # 가운데 줄
-            print("* " * (2 * N - 2) + "*")
-        if (i % 2 == 1) and (i != 2 * N - 1):  # i = 1, 3, 5, 7
-            side = "* "
-            middle = "*" * (4 * (N - ))
-            print(side + middle + side + "*")
-        if i % 2 == 0:  # i = 2, 4, 6, 8 ...
-            print()
+    for i in range(length):
+        stars[y][x + i] = '*'
+        stars[y + i][x] = '*'
+        stars[y + length - 1][x + i] = '*'
+        stars[y + i][x + length - 1] = '*'
+
+    fill_star(n - 1, x + 2, y + 2)
+
+fill_star(n, 0, 0)
+
+for i in stars:
+    print(''.join(i))
