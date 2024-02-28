@@ -25,23 +25,113 @@ def switch(sex, givenNum):
             else:
                 a[n - 1] = 0
         else:
-            for i in range(1, n):
+            for i in range(n):
                 if givenNum - i == 0 or givenNum + i == n + 1:
                     break
+                elif i == 0:
+                    if a[givenNum - 1] == 0:
+                        a[givenNum - 1] = 1
+                    else:
+                        a[givenNum - 1] = 0
                 else:
-                    if a[givenNum - i] == a[givenNum + i]:
-                        if a[givenNum - i] == 0:
-                            a[givenNum - i] = 1
-                            a[givenNum + i] = 1
+                    if a[givenNum - 1 - i] == a[givenNum - 1 + i]:
+                        if a[givenNum - 1 - i] == 0:
+                            a[givenNum - 1 - i] = 1
+                            a[givenNum - 1 + i] = 1
                         else:
-                            a[givenNum - i] = 0
-                            a[givenNum + i] = 0                           
+                            a[givenNum - 1 - i] = 0
+                            a[givenNum - 1 + i] = 0   
+                    else:
+                        break                        
 
-    print(a)
 
 # 성별, 받은 수
-for i in range(num_student):
-    a = list(map(int, sys.stdin.readline().split()))
-    sex = a[0]
-    givenNum = a[1]
+for _ in range(num_student):
+    b = list(map(int, sys.stdin.readline().split()))
+    sex = b[0]
+    givenNum = b[1]
+    #print("성별, 스위치의 개수 : %d, %d"%(sex, givenNum))
     switch(sex, givenNum)
+
+
+#한줄에 20개씩 출력
+if n < 21:
+    for i in range(n):
+        if i != n - 1:
+            print(a[i], end=' ')
+        else:
+            print(a[i])            
+elif 21 <= n < 41:
+    for i in range(20):
+        if i != 19:
+            print(a[i], end=' ')
+        else:
+            print(a[i])
+    for i in range(20, n):
+        if i != n - 1:
+            print(a[i], end=' ')
+        else:
+            print(a[i])
+elif 41 <= n < 61:
+    for i in range(20):
+        if i != 19:
+            print(a[i], end=' ')
+        else:
+            print(a[i])
+    for i in range(20, 40):
+        if i != 39:
+            print(a[i], end=' ')
+        else:
+            print(a[i])
+    for i in range(40, n):
+        if i != n - 1:
+            print(a[i], end=' ')
+        else:
+            print(a[i])
+elif 61 <= n < 81:
+    for i in range(20):
+        if i != 19:
+            print(a[i], end=' ')
+        else:
+            print(a[i])
+    for i in range(20, 40):
+        if i != 39:
+            print(a[i], end=' ')
+        else:
+            print(a[i])
+    for i in range(40, 60):
+        if i != 59:
+            print(a[i], end=' ')
+        else:
+            print(a[i])
+    for i in range(60, n):
+        if i != n - 1:
+            print(a[i], end=' ')
+        else:
+            print(a[i])        
+else:
+    for i in range(20):
+        if i != 19:
+            print(a[i], end=' ')
+        else:
+            print(a[i])
+    for i in range(20, 40):
+        if i != 39:
+            print(a[i], end=' ')
+        else:
+            print(a[i])
+    for i in range(40, 60):
+        if i != 59:
+            print(a[i], end=' ')
+        else:
+            print(a[i])
+    for i in range(60, 80):
+        if i != 79:
+            print(a[i], end=' ')
+        else:
+            print(a[i])
+    for i in range(80, n):
+        if i != n - 1:
+            print(a[i], end=' ')
+        else:
+            print(a[i])  
