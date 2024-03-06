@@ -12,7 +12,6 @@ for i in range(N):
 
 outPut = [[0, 1] for _ in range(N)]
 outPut[0][0] = A[0][1]
-outPut[0][1] = 1
 
 for i in range(1, N):
     for j in range(i):
