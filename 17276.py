@@ -74,9 +74,9 @@ for i in range(T):
             # 남동 대각선 > 남서 대각선
             emptyArr[n - 1 - k][k] = arr[n - 1 - k][n - 1 - k]
             # 남 선 > 서선
-            emptyArr[n - 1 - k][k] = arr[n - 1 - k][centerNum]
+            emptyArr[centerNum][k] = arr[n - 1 - k][centerNum]
             # 남서 대각선 > 서북 대각선
-            emptyArr[centerNum][k] = arr[n - 1 - k][k]
+            emptyArr[k][k] = arr[n - 1 - k][k]
             # 서 선 > 북선
             emptyArr[k][centerNum] = arr[centerNum][k]
     elif d == 135 or d == -225:
