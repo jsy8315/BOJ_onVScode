@@ -7,3 +7,4 @@ N, M, R = map(int, sys.stdin.readline().split())
 snail = min(N, M) // 2
 
 def rotate():
+    if
