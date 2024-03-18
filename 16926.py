@@ -43,6 +43,6 @@ for i in range(R):
     rotate(N, M)
 
 for i in range(N):
-    print(emp[i])
+    print(*emp[i])
 
 
