@@ -7,19 +7,15 @@ A = [0 for _ in range(N)]
 for i in range(N):
     A[i] = list(map(int, sys.stdin.readline().split()))
 
-emp = [0 for _ in range(N)]
-
-for i in range(N):
-    emp[i] = [0 for _ in range(M)]
+emp = [[0] * M for _ in range(N)]
 
 # 껍질 수 
 snail = min(N, M) // 2
 
 
 def rotate(N, M):
-    for i in range(N):
-        for j in range(M):
-            emp[i][j] = 0
+    emp = [[0] * M for _ in range(N)]
+
             
     for k in range(snail):
         for i in range(k, N - k):
@@ -39,10 +35,10 @@ def rotate(N, M):
 
 
 
-for i in range(R):
+for _ in range(R):
     rotate(N, M)
 
-for i in range(N):
+for _ in range(N):
     print(*emp[i])
 
 
